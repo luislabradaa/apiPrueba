@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module">
+        fetch('http://localhost:3000/categoria')
+            .then(res => res.json())
+            .then(categorias => {
+            const html = categorias.map(categoria=>{
+                return `
+                    <article data-id="${categoria.id_cat}">
+                        <h2>${categoria.nomCat}</h2>
+                        <p>${categoria.tipo}</p>
+                    </article>
+                    <button>Eliminar</button>
+                `
+            }).join('')
+            
+            document.querySelector('main').innerHTML = html
+
+            document.addEventListener('click', e =>{
+              if(e.target.matches('button')){
+                const article = e.target.closest('article')
+                const id = article.dataset.id
+
+                fetch(`http://localhost:3000/categoria/${id}`,{
+                    method: 'DELETE'
+                })
+                    .then(res => res.json())
+                    .then(res => {
+                        if(res.success){
+                            article.remove()
+                        }
+                    })
+              }  
+            })
+        })
+    </script>
+</head>
+<body>
+    <main></main>
+</body>
+</html>

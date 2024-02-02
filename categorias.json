@@ -1,0 +1,20 @@
+[
+  {
+    "id_cat": 1,
+    "nomCat": "JUMPERS SC-LC",
+    "tipo": "OM2",
+    "distancia": "2 m"
+  },
+  {
+    "id_cat": 2,
+    "nomCat": "JUMPERS SC-LC",
+    "tipo": "OM2",
+    "distancia": "5 m"
+  },
+  {
+    "id_cat": 3,
+    "nomCat": "JUMPERS SC-LC",
+    "tipo": "OM2",
+    "distancia": "10 m"
+  }
+]
