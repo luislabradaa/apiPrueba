@@ -2,6 +2,7 @@
 import express from 'express'
 
 import { categoriasRouter } from './routes/categoria.js'
+import { inventarioRouter } from './routes/inventario.js'
 import { corsMiddleware } from './middlewares/cors.js'
 
 const app = express()
@@ -12,7 +13,7 @@ app.use(corsMiddleware()) //Soluciona error de cors automatico
 
 
 app.use('/categorias', categoriasRouter)
-
+app.use('/inventario', inventarioRouter)
 
 const PORT = process.env.PORT ?? 3000
 

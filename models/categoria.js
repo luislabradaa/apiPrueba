@@ -1,8 +1,8 @@
 import { readJSON } from "../utils.js"
 
 const categorias = readJSON('./categorias.json')
-
-export class CategoriaModel {
+//! NOT USING ONLY FOR JSON FILE
+class CategoriaModel {
     static async getAll ({tipo}){
         if (tipo){
 

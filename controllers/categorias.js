@@ -1,5 +1,5 @@
 import {validateCategoria, validatePartialCategoria} from '../schemas/categorias.js'
-import { CategoriaModel } from "../models/categoria.js";
+import { CategoriaModel } from "../models/mysql.js";
 
 export class CategoriaController {
     static async getAll (req,res){
